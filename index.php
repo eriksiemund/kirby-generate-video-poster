@@ -17,7 +17,9 @@ Kirby::plugin('eriksiemund/generate-video-poster', [
                     return $this->model()->url();
                 },
                 'isposterrequired' => function () {
-                    return $this->model()->content()->isposterrequired()->value();
+                    $content = $this->model()->content();
+
+                    return $content->has('isposterrequired') ? $content->isposterrequired()->value() : 1;
                 },
                 'posterfieldname' => function ($posterfieldname = null) {
                     return $posterfieldname ?? 'poster';
