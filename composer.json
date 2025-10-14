@@ -9,5 +9,8 @@
             "name": "Erik Siemund",
             "email": "mail@eriksiemund.com"
         }
-    ]
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
 }
