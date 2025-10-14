@@ -1,6 +1,6 @@
 <?php
 
-Kirby::plugin('gemini-services/generate-video-poster', [
+Kirby::plugin('eriksiemund/generate-video-poster', [
     'fields' => [
         'generatevideoposter' => [
             'props' => [
