@@ -56,6 +56,12 @@ export default {
                 await new Promise(resolve => {
                     video.addEventListener('seeked', resolve, { once: true })
                 })
+            } else {
+                if (!video.readyState) {
+                    await new Promise(resolve => {
+                      video.addEventListener('loadedmetadata', resolve, { once: true })
+                    })
+                }
             }
             
             const canvas        = document.createElement('canvas')
