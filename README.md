@@ -6,7 +6,9 @@ Kirby Video Poster Generator is a plugin for [Kirby CMS](https://getkirby.com) t
 
 You have to use composer to install the plugin into your project.
 
-`composer require eriksiemund/generate-video-poster`
+```console
+composer require eriksiemund/generate-video-poster
+```
 
 ## Setup
 
