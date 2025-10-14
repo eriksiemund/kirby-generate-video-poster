@@ -18,7 +18,12 @@ In the video file blueprint add a generatevideoposter field, browse to a video d
 ```yaml
 title: Default Page
 fields:
-  call_my_command:
+  poster:
+    label: My Poster
+    type: files
+    multiple: false
+    width: 1/2
+  my_generatevideoposter_button:
     type: generatevideoposter
 ```
 
