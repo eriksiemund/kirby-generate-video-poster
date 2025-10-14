@@ -1,0 +1,12 @@
+{
+    "name": "eriksiemund/generate-video-poster",
+    "description": "Automatically/Manually generate video poster from first frame",
+    "homepage": "https://eriksiemund.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erik Siemund",
+            "email": "mail@eriksiemund.com"
+        }
+    ]
+}
