@@ -81,7 +81,7 @@ export default {
                     }
 
                     const videoFilename = this.basename + '.' + this.extension
-                    const posterFilename = this.basename + '_' + formatCurrentTime(video.currentTime) + '.png'
+                    const posterFilename = this.basename + '_' + formatCurrentTime(video.currentTime) + '.jpeg'
 
                     const formData = new FormData();
                     formData.append('pageId', this.pageid)
