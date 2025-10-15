@@ -114,7 +114,7 @@ export default {
                     canvas.height = 0
                 }
                 
-            }, 'image/png')
+            }, 'image/jpeg', 0.8)
         }
     },
     mounted() {
