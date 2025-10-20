@@ -73,15 +73,8 @@ export default {
             
             canvas.toBlob(async blob => {
                 try {
-                    const formatCurrentTime = (time) => {
-                        const seconds = Math.floor(time)
-                        const hundredths = Math.round((time % 1) * 100)
-                        const hundredthsPadded = hundredths.toString().padStart(2, '0')
-                        return `${seconds}_${hundredthsPadded}`
-                    }
-
                     const videoFilename = this.basename + '.' + this.extension
-                    const posterFilename = this.basename + '_' + formatCurrentTime(video.currentTime) + '.jpeg'
+                    const posterFilename = this.basename + '_poster.jpeg'
 
                     const formData = new FormData();
                     formData.append('pageId', this.pageid)
