@@ -78,22 +78,19 @@ Kirby::plugin('eriksiemund/generate-video-poster', [
                     $posterFileExisiting = $page->file($posterFilename);
 
                     if ($posterFileExisiting) {
-                        $video->update([
-                            $posterFieldName => $posterFileExisiting->id(),
-                            'isposterrequired' => 0
-                        ]);
-                    } else {
-                        $posterFileUploaded = $page->createFile([
-                            'source'   => $posterFile['tmp_name'],
-                            'filename' => $posterFilename,
-                            'template' => 'image'
-                        ]);
-
-                        $video->update([
-                            $posterFieldName => $posterFileUploaded->id(),
-                            'isposterrequired' => 0
-                        ]);
+                        $posterFileExisiting->delete();
                     }
+                    
+                    $posterFileUploaded = $page->createFile([
+                        'source'   => $posterFile['tmp_name'],
+                        'filename' => $posterFilename,
+                        'template' => 'image'
+                    ]);
+
+                    $video->update([
+                        $posterFieldName => $posterFileUploaded->id(),
+                        'isposterrequired' => 0
+                    ]);
 
                     return [
                         'success' => true,
