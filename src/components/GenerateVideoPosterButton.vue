@@ -62,6 +62,10 @@ export default {
                       video.addEventListener('loadedmetadata', resolve, { once: true })
                     })
                 }
+
+                await video.play()
+                await new Promise(resolve => setTimeout(resolve, 100))
+                video.pause()
             }
             
             const canvas        = document.createElement('canvas')
