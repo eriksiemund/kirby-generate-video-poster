@@ -5,7 +5,8 @@ Kirby::plugin('eriksiemund/generate-video-poster', [
         'generatevideoposter' => [
             'props' => [
                 'pageid' => function () {
-                    return $this->model()->page()->id();
+                    $pageId = $this->model()->page() ? $this->model()->page()->id() : 'site';
+                    return $pageId;
                 },
                 'basename' => function () {
                     return $this->model()->name();
@@ -49,7 +50,12 @@ Kirby::plugin('eriksiemund/generate-video-poster', [
             'method' => 'POST',
             'action' => function () {
                 $pageId = get('pageId');
-                $page = page($pageId);
+                $page = null;
+                if ($page === 'site') {
+                    $page = site();
+                } else {
+                    $page = page($pageId);
+                }
                 if (!$page) {
                     return ['error' => '(Generate Video Poster) Page not found'];
                 }
